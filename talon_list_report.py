@@ -203,10 +203,7 @@ def _generate_list_report(list_data: Dict) -> str:
                     file_paths = ','.join(get_source_file_paths(context_path))
                     print(f'    Context: {context_path} ({file_paths})', file=fp)
                     for capture in captures:
-                        try:
-                            print(f'        Path: {capture.path} ==> Rule: {capture.rule.rule}', file=fp)
-                        except AttributeError:
-                            logging.debug(f'BLUEBERRY - {list_data["captures"]=}')
+                        print(f'        Path: {capture.path} ==> Rule: {capture.rule.rule}', file=fp)
                     print('\n', file=fp)
 
             if 'commands' in list_data:
@@ -245,9 +242,6 @@ class PersonalizationActions:
         if not lists:
             app.notify(f'No lists found matching {key_phrase}.')
             return
-
-        if True:
-            logging.debug(f'PEABERRY - {lists=}')
 
         # gather data about the matching lists
         data = {}
