@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 # import pprint
 from typing import Any, List, Dict, Tuple, Callable
-import logging
+#import logging
 import re
 import tempfile
 
@@ -155,9 +155,6 @@ def _discover_list(list_name: str) -> Dict[str, Dict]:
             
         if contains_list_reference(list_name, rule):
             # found matching capture
-            
-            if 'position' in rule:
-                logging.debug(f'OKE DONKEY: {list_ref=}, {v[0]=}')
             
             if not 'captures' in list_data:
                 # initialize captures
